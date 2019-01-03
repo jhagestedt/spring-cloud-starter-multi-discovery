@@ -1,0 +1,3 @@
+org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
+org.springframework.cloud.extension.AutoMultiServiceRegistrationAutoConfiguration,\
+org.springframework.cloud.extension.MultiServiceRegistryAutoConfiguration
