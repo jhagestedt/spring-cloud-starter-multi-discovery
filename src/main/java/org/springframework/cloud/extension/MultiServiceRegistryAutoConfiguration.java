@@ -7,6 +7,7 @@ import org.springframework.boot.actuate.endpoint.annotation.Endpoint;
 import org.springframework.boot.autoconfigure.AutoConfigureAfter;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnBean;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnClass;
+import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
 import org.springframework.cloud.client.serviceregistry.Registration;
 import org.springframework.cloud.client.serviceregistry.ServiceRegistry;
 import org.springframework.cloud.consul.serviceregistry.ConsulServiceRegistryAutoConfiguration;
@@ -19,6 +20,7 @@ import org.springframework.context.annotation.Configuration;
     EurekaClientAutoConfiguration.class,
     ConsulServiceRegistryAutoConfiguration.class
 })
+@ConditionalOnProperty(value = "spring.cloud.service-registry.multi-registration.enabled", havingValue = "true")
 public class MultiServiceRegistryAutoConfiguration {
 
     @ConditionalOnBean(ServiceRegistry.class)

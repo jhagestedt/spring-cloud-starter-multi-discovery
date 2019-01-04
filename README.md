@@ -38,6 +38,9 @@ spring:
       auto-registration:
         enabled: true
       # important  
+      multi-registration:
+        enabled: true
+      # important  
       auto-multi-registration:
         enabled: true
         
